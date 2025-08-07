@@ -494,6 +494,29 @@ document.addEventListener('DOMContentLoaded', function() {
         currentMapLocation = location;
     }
 });
+
+// Toggle Menu Functionality for Mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('toggle');
+    const dropdown = document.getElementById('myDropdown');
+    
+    if (toggleBtn && dropdown) {
+        toggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            dropdown.classList.remove('show');
+        });
+        
+        // Prevent dropdown from closing when clicking inside it
+        dropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});
 </script>
 
 </body>

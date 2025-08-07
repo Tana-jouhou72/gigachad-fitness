@@ -14,129 +14,176 @@
         overflow-x: hidden;
     }
     
-    /* Headers and navigation */
+    /* Specific header fixes for the complex navigation */
     header {
         height: auto !important;
-        min-height: 60px;
-        padding: 10px 15px;
-        flex-direction: column;
-        gap: 10px;
+        min-height: 70px !important;
+        padding: 10px 15px !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+        align-items: center !important;
     }
     
-    /* Logo adjustments */
+    header > * {
+        height: auto !important;
+    }
+    
+    /* Logo mobile optimization */
     #logo, .logo {
-        font-size: 1.8rem !important;
+        font-size: 1.5rem !important;
         width: auto !important;
-        margin-bottom: 5px;
+        margin: 0 !important;
+        flex: 1;
     }
     
-    /* Navigation menu */
-    #nav_bar, .nav-bar, nav ul {
-        flex-direction: column;
-        width: 100% !important;
-        gap: 5px;
-        padding: 10px 0;
+    /* Hide complex desktop navigation on mobile */
+    #nav_bar, .nav-bar {
+        display: none !important;
     }
     
-    #nav_bar li, .nav-bar li, nav li {
-        width: 100%;
-        text-align: center;
-        padding: 8px 0;
-    }
-    
-    #nav_bar a, .nav-bar a, nav a {
-        padding: 10px !important;
-        display: block;
-        border-radius: 5px;
-    }
-    
-    /* Search bar */
+    /* Search bar mobile optimization */
     #search, .search {
-        width: 100% !important;
-        margin: 10px 0;
+        width: 60% !important;
+        margin: 0 !important;
+        order: 2;
+        position: relative;
     }
     
     #search_bar, .search-bar, input[type="search"] {
         width: 100% !important;
-        padding: 12px;
-        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 8px 35px 8px 15px !important;
+        font-size: 14px !important;
+        height: 35px !important;
+        border-radius: 20px !important;
     }
     
-    /* Right icons/account section */
+    #search_icon, .search-icon {
+        position: absolute !important;
+        right: 10px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        left: auto !important;
+    }
+    
+    /* Right icons mobile optimization */
     #right_icon, .right-icon {
-        width: 100% !important;
-        justify-content: center;
-        margin-top: 10px;
+        display: none !important; /* Hide complex dropdowns on mobile */
     }
     
-    /* Main content containers */
-    .container, .main_container, main {
-        width: 100% !important;
-        padding: 15px !important;
-        margin: 0 !important;
-        margin-top: 80px !important; /* Account for fixed header */
+    /* Show toggle menu on mobile */
+    #toggle {
+        display: block !important;
+        font-size: 24px !important;
+        cursor: pointer !important;
+        order: 3;
+        color: #333 !important;
     }
     
-    /* Grid and flex layouts */
-    .grid, [class*="grid"] {
+    /* Toggle dropdown improvements */
+    #myDropdown, .dropdown-content {
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        background: white !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+        border-radius: 8px !important;
+        z-index: 1001 !important;
+        min-width: 200px !important;
+    }
+    
+    #myDropdown a, .dropdown-content a {
+        display: block !important;
+        padding: 12px 16px !important;
+        color: #333 !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid #eee !important;
+    }
+    
+    #myDropdown a:hover, .dropdown-content a:hover {
+        background-color: #f5f5f5 !important;
+    }
+    
+    /* Main content container adjustments */
+    .main_container, .container, main, body > section:first-of-type {
+        margin-top: 90px !important;
+        padding: 0 15px !important;
+    }
+    
+    /* Banner section mobile fixes */
+    #banner, .banner {
+        margin-top: 90px !important;
+        padding: 20px 15px !important;
+    }
+    
+    #banner img, .banner img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 250px !important;
+        object-fit: cover !important;
+        border-radius: 10px !important;
+    }
+    
+    /* Grid layouts mobile fix */
+    [class*="grid"], .grid {
         grid-template-columns: 1fr !important;
         gap: 15px !important;
     }
     
+    /* Flex layouts mobile fix */
     .flex, [class*="flex"] {
         flex-direction: column !important;
         gap: 15px !important;
     }
     
-    /* Cards and boxes */
-    .card, .box, [class*="card"], [class*="box"] {
+    /* Card layouts mobile fix */
+    .card, [class*="card"], .box, [class*="box"] {
         width: 100% !important;
         margin: 10px 0 !important;
         padding: 15px !important;
     }
     
-    /* Images */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-    
-    /* Typography */
+    /* Typography mobile optimization */
     h1 {
-        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
-        line-height: 1.2;
-        margin-bottom: 15px;
+        font-size: clamp(1.5rem, 5vw, 2.2rem) !important;
+        line-height: 1.2 !important;
+        margin: 15px 0 !important;
+        text-align: center !important;
     }
     
     h2 {
-        font-size: clamp(1.5rem, 4vw, 2rem) !important;
-        line-height: 1.3;
-        margin-bottom: 12px;
+        font-size: clamp(1.3rem, 4vw, 1.8rem) !important;
+        line-height: 1.3 !important;
+        margin: 12px 0 !important;
+        text-align: center !important;
     }
     
     h3 {
-        font-size: clamp(1.3rem, 3vw, 1.7rem) !important;
-        line-height: 1.4;
-        margin-bottom: 10px;
+        font-size: clamp(1.1rem, 3vw, 1.5rem) !important;
+        line-height: 1.4 !important;
+        margin: 10px 0 !important;
     }
     
     p {
-        font-size: clamp(1rem, 2.5vw, 1.1rem) !important;
-        line-height: 1.6;
-        margin-bottom: 15px;
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem) !important;
+        line-height: 1.6 !important;
+        margin-bottom: 15px !important;
     }
     
-    /* Buttons */
+    /* Button mobile optimization */
     button, .btn, [class*="btn"], input[type="submit"], input[type="button"] {
         width: 100% !important;
         padding: 15px !important;
         font-size: 16px !important;
         margin: 10px 0 !important;
-        border-radius: 8px;
-        cursor: pointer;
+        border-radius: 8px !important;
+        cursor: pointer !important;
+        border: none !important;
+        background: #667eea !important;
+        color: white !important;
     }
     
-    /* Forms */
+    /* Form mobile optimization */
     form {
         width: 100% !important;
         padding: 15px !important;
@@ -147,22 +194,20 @@
         padding: 12px !important;
         font-size: 16px !important; /* Prevents zoom on iOS */
         margin: 5px 0 15px 0 !important;
-        border-radius: 5px;
-        border: 1px solid #ddd;
+        border-radius: 5px !important;
+        border: 1px solid #ddd !important;
     }
     
-    /* Dropdowns */
-    .dropdown, [class*="dropdown"] {
-        position: static !important;
-        width: 100% !important;
+    /* Images general mobile fix */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
     }
     
-    .dropdown-content, [class*="dropdown"] [class*="drop"] {
-        position: static !important;
-        width: 100% !important;
-        box-shadow: none !important;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+    /* Section spacing */
+    section {
+        padding: 20px 15px !important;
+        margin: 20px 0 !important;
     }
 }
 
@@ -173,17 +218,40 @@
     }
     
     header {
-        min-height: 50px;
-        padding: 8px 10px;
+        min-height: 60px !important;
+        padding: 8px 10px !important;
     }
     
     #logo, .logo {
-        font-size: 1.5rem !important;
+        font-size: 1.3rem !important;
     }
     
-    .container, .main_container, main {
-        padding: 10px !important;
-        margin-top: 60px !important;
+    #search {
+        width: 50% !important;
+    }
+    
+    #search_bar {
+        font-size: 12px !important;
+        padding: 6px 30px 6px 12px !important;
+        height: 32px !important;
+    }
+    
+    #toggle {
+        font-size: 20px !important;
+    }
+    
+    .main_container, .container, main, body > section:first-of-type {
+        margin-top: 80px !important;
+        padding: 0 10px !important;
+    }
+    
+    #banner, .banner {
+        margin-top: 80px !important;
+        padding: 15px 10px !important;
+    }
+    
+    #banner img, .banner img {
+        max-height: 200px !important;
     }
     
     button, .btn, [class*="btn"] {
@@ -209,18 +277,31 @@
     /* Add touch-friendly active states */
     button:active, .btn:active, a:active {
         background-color: rgba(0, 0, 0, 0.1) !important;
-        transform: scale(0.98);
+        transform: scale(0.98) !important;
+    }
+    
+    #toggle:active {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+        border-radius: 4px !important;
     }
 }
 
 /* Landscape orientation on mobile */
 @media (max-width: 768px) and (orientation: landscape) {
     header {
-        min-height: 50px;
+        min-height: 50px !important;
     }
     
-    .container, .main_container, main {
-        margin-top: 60px !important;
+    .main_container, .container, main, body > section:first-of-type {
+        margin-top: 70px !important;
+    }
+    
+    #banner, .banner {
+        margin-top: 70px !important;
+    }
+    
+    #banner img, .banner img {
+        max-height: 150px !important;
     }
 }
 
