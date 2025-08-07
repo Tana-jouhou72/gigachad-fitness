@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SPORT GYM - Gym Details | GIGACHAD</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../homepage/style.css">
+    <link rel="stylesheet" href="../homepage/gym_style.css">
+    <link rel="stylesheet" href="gym_detail_style.css">
+    
+    <!-- Font/Icon Links -->
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <header>
+        <div id="logo">
+            <a href="../homepage/homepage.html">GIGACHAD</a>
+        </div>
+        <ul id="nav_bar">
+            <!-- Updated Navigation Links -->
+            <li><a href="../homepage/homepage.html">Home</a></li>
+            <li><a href="#">Find a Gym</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Memberships</a></li>
+            <li><a href="#">Blog</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
+        </ul> 
+        <div id="search">
+             <!-- Updated Search Bar Placeholder -->
+            <input type="text" id="search_bar" placeholder="Search for gyms, locations, classes...">
+            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+        </div>
+        <div id="right_icon">
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="../login and sign up/login_signup.html" class="dropList">Login</a>
+                  <a href="../login and sign up/login_signup.html" class="dropList">Sign Up</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>Account</span>
+            </div>
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="../poster and video/poster_video.html?tab=video" class="dropList">Video</a>
+                  <a href="../poster and video/poster_video.html?tab=poster" class="dropList">Poster</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>About US</span>
+            </div>
+        </div>
+
+        <!-- TOGGLE MENU (for mobile) -->
+        <div id="toggle">
+            <i class='bx bx-menu dropbtn'></i>
+            <div id="myDropdown" class="dropdown-content">
+                <div class="top">
+                    <a href="../homepage/homepage.html">Home</a>
+                    <a href="#">Find a Gym</a>
+                    <a href="#">Classes</a>
+                    <a href="#">Memberships</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="bottom">
+                    <i class="fa-regular fa-user fa_user" id="profile"></i>
+                    <i class="fa-regular fa-heart fa_wishlist"></i>
+                </div>             
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB NAVIGATION -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="../homepage/homepage.html"><i class="fa-solid fa-house"></i> Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="#">Gyms</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>SPORT GYM</span>
+        </div>
+    </nav>
+
+    <!-- GYM HERO SECTION -->
+    <section class="gym-hero">
+        <div class="gym-hero-content">
+            <div class="gym-image-gallery">
+                <div class="main-image">
+                    <img src="images_gym/1.webp" alt="SPORT GYM 1" id="main-gym-image">
+                    <button class="favorite-btn" id="favorite-btn">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+                <div class="thumbnail-images">
+                    <img src="images_gym/1.webp" alt="SPORT GYM 1" class="thumbnail active" onclick="changeMainImage(this)">
+                    <img src="images_gym/2.jpg" alt="SPORT GYM 2" class="thumbnail" onclick="changeMainImage(this)">
+                    <img src="images_gym/3.jpg" alt="SPORT GYM 3" class="thumbnail" onclick="changeMainImage(this)">
+                    <img src="images_gym/4.jpg" alt="SPORT GYM 4" class="thumbnail" onclick="changeMainImage(this)">
+                </div>
+            </div>
+            
+            <div class="gym-info">
+                <div class="gym-header">
+                    <h1>SPORT GYM</h1>
+                    <div class="gym-rating">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <span class="rating-text">4.5 (324 reviews)</span>
+                    </div>
+                </div>
+                
+                <div class="gym-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>123 Fitness Street, Downtown, Tokyo, Japan</span>
+                </div>
+                
+                <div class="gym-status">
+                    <span class="status-badge open">Open Now</span>
+                    <span class="hours">Open until 11:00 PM</span>
+                </div>
+                
+                <div class="gym-highlights">
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>24/7 Access</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-wifi"></i>
+                        <span>Free WiFi</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-car"></i>
+                        <span>Free Parking</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fa-solid fa-shower"></i>
+                        <span>Showers</span>
+                    </div>
+                </div>
+                
+                <div class="gym-pricing">
+                    <div class="price-info">
+                        <span class="price">¥8,900</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="price-note">Starting from basic membership</div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn-primary" id="book-trial">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        Book Free Trial
+                    </button>
+                    <button class="btn-secondary" id="get-directions">
+                        <i class="fa-solid fa-directions"></i>
+                        Get Directions
+                    </button>
+                    <button class="btn-contact" id="contact-gym">
+                        <i class="fa-solid fa-phone"></i>
+                        Contact
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GYM DETAILS TABS -->
+    <section class="gym-details">
+        <div class="details-container">
+            <div class="tabs-navigation">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="amenities">Amenities</button>
+                <button class="tab-btn" data-tab="classes">Classes</button>
+                <button class="tab-btn" data-tab="membership">Membership</button>
+                <button class="tab-btn" data-tab="reviews">Reviews</button>
+                <button class="tab-btn" data-tab="location">Location</button>
+            </div>
+            
+            <div class="tab-content">
+                <!-- OVERVIEW TAB -->
+                <div class="tab-pane active" id="overview">
+                    <h3>About SPORT GYM</h3>
+                    <p>SPORT GYM is a premier fitness facility located in the heart of Tokyo, offering state-of-the-art equipment and exceptional service. Our modern facility spans over 3,000 square meters and features the latest fitness technology, professional trainers, and a welcoming atmosphere for fitness enthusiasts of all levels.</p>
+                    
+                    <div class="overview-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">3,000</div>
+                            <div class="stat-label">Sq Meters</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Equipment</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">Trainers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1,200+</div>
+                            <div class="stat-label">Members</div>
+                        </div>
+                    </div>
+                    
+                    <h4>Operating Hours</h4>
+                    <div class="hours-schedule">
+                        <div class="day-hours">
+                            <span class="day">Monday - Friday</span>
+                            <span class="hours">5:00 AM - 11:00 PM</span>
+                        </div>
+                        <div class="day-hours">
+                            <span class="day">Saturday</span>
+                            <span class="hours">6:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="day-hours">
+                            <span class="day">Sunday</span>
+                            <span class="hours">7:00 AM - 9:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AMENITIES TAB -->
+                <div class="tab-pane" id="amenities">
+                    <h3>Facilities & Amenities</h3>
+                    <div class="amenities-grid">
+                        <div class="amenity-category">
+                            <h4><i class="fa-solid fa-dumbbell"></i> Strength Training</h4>
+                            <ul>
+                                <li>Free weights area</li>
+                                <li>Olympic lifting platform</li>
+                                <li>Cable machines</li>
+                                <li>Smith machines</li>
+                                <li>Power racks</li>
+                            </ul>
+                        </div>
+                        <div class="amenity-category">
+                            <h4><i class="fa-solid fa-heart-pulse"></i> Cardio Equipment</h4>
+                            <ul>
+                                <li>Treadmills</li>
+                                <li>Elliptical machines</li>
+                                <li>Stationary bikes</li>
+                                <li>Rowing machines</li>
+                                <li>Stair climbers</li>
+                            </ul>
+                        </div>
+                        <div class="amenity-category">
+                            <h4><i class="fa-solid fa-spa"></i> Wellness</h4>
+                            <ul>
+                                <li>Sauna</li>
+                                <li>Steam room</li>
+                                <li>Massage therapy</li>
+                                <li>Recovery lounge</li>
+                                <li>Stretching area</li>
+                            </ul>
+                        </div>
+                        <div class="amenity-category">
+                            <h4><i class="fa-solid fa-building"></i> General Facilities</h4>
+                            <ul>
+                                <li>Locker rooms</li>
+                                <li>Showers</li>
+                                <li>Towel service</li>
+                                <li>Water stations</li>
+                                <li>Juice bar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CLASSES TAB -->
+                <div class="tab-pane" id="classes">
+                    <h3>Group Classes</h3>
+                    <div class="classes-schedule">
+                        <div class="class-item">
+                            <div class="class-time">7:00 AM</div>
+                            <div class="class-info">
+                                <div class="class-name">Morning Yoga</div>
+                                <div class="class-instructor">with Sarah Johnson</div>
+                                <div class="class-duration">60 minutes</div>
+                            </div>
+                            <button class="join-class-btn">Join</button>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time">6:00 PM</div>
+                            <div class="class-info">
+                                <div class="class-name">HIIT Training</div>
+                                <div class="class-instructor">with Mike Chen</div>
+                                <div class="class-duration">45 minutes</div>
+                            </div>
+                            <button class="join-class-btn">Join</button>
+                        </div>
+                        <div class="class-item">
+                            <div class="class-time">7:30 PM</div>
+                            <div class="class-info">
+                                <div class="class-name">Zumba Dance</div>
+                                <div class="class-instructor">with Maria Lopez</div>
+                                <div class="class-duration">50 minutes</div>
+                            </div>
+                            <button class="join-class-btn">Join</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- MEMBERSHIP TAB -->
+                <div class="tab-pane" id="membership">
+                    <h3>Membership Plans</h3>
+                    <div class="membership-plans">
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h4>Basic</h4>
+                                <div class="plan-price">¥8,900<span>/month</span></div>
+                            </div>
+                            <ul class="plan-features">
+                                <li><i class="fa-solid fa-check"></i> Gym access during peak hours</li>
+                                <li><i class="fa-solid fa-check"></i> Locker room access</li>
+                                <li><i class="fa-solid fa-check"></i> Basic equipment usage</li>
+                                <li><i class="fa-solid fa-xmark"></i> Group classes</li>
+                                <li><i class="fa-solid fa-xmark"></i> Personal training</li>
+                            </ul>
+                            <button class="select-plan-btn">Select Plan</button>
+                        </div>
+                        <div class="plan-card popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <div class="plan-header">
+                                <h4>Premium</h4>
+                                <div class="plan-price">¥12,900<span>/month</span></div>
+                            </div>
+                            <ul class="plan-features">
+                                <li><i class="fa-solid fa-check"></i> 24/7 gym access</li>
+                                <li><i class="fa-solid fa-check"></i> All equipment access</li>
+                                <li><i class="fa-solid fa-check"></i> Unlimited group classes</li>
+                                <li><i class="fa-solid fa-check"></i> Sauna & steam room</li>
+                                <li><i class="fa-solid fa-check"></i> 1 personal training session</li>
+                            </ul>
+                            <button class="select-plan-btn">Select Plan</button>
+                        </div>
+                        <div class="plan-card">
+                            <div class="plan-header">
+                                <h4>VIP</h4>
+                                <div class="plan-price">¥18,900<span>/month</span></div>
+                            </div>
+                            <ul class="plan-features">
+                                <li><i class="fa-solid fa-check"></i> All Premium features</li>
+                                <li><i class="fa-solid fa-check"></i> Priority booking</li>
+                                <li><i class="fa-solid fa-check"></i> Unlimited personal training</li>
+                                <li><i class="fa-solid fa-check"></i> Nutrition counseling</li>
+                                <li><i class="fa-solid fa-check"></i> Massage therapy</li>
+                            </ul>
+                            <button class="select-plan-btn">Select Plan</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- REVIEWS TAB -->
+                <div class="tab-pane" id="reviews">
+                    <h3>Member Reviews</h3>
+                    <div class="reviews-summary">
+                        <div class="rating-overview">
+                            <div class="overall-rating">4.5</div>
+                            <div class="stars-large">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <div class="review-count">Based on 324 reviews</div>
+                        </div>
+                    </div>
+                    
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">T</div>
+                                <div class="reviewer-details">
+                                    <div class="reviewer-name">Takeshi Yamamoto</div>
+                                    <div class="review-date">2 weeks ago</div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-text">Excellent gym with modern equipment and friendly staff. The facilities are always clean and well-maintained. Highly recommend for serious fitness enthusiasts!</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">M</div>
+                                <div class="reviewer-details">
+                                    <div class="reviewer-name">Maria Santos</div>
+                                    <div class="review-date">1 month ago</div>
+                                </div>
+                                <div class="review-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <p class="review-text">Great variety of classes and the trainers are very knowledgeable. The only downside is it can get quite busy during peak hours.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- LOCATION TAB -->
+                <div class="tab-pane" id="location">
+                    <h3>Location & Contact</h3>
+                    <div class="location-info">
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <strong>Address</strong>
+                                    <p>123 Fitness Street, Downtown, Tokyo, Japan 100-0001</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <p>+81 3-1234-5678</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope"></i>
+                                <div>
+                                    <strong>Email</strong>
+                                    <p>info@sportgym.jp</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-globe"></i>
+                                <div>
+                                    <strong>Website</strong>
+                                    <p>www.sportgym.jp</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="map-section">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7471516705086!2d139.6917064!3d35.6894875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b563b00109f%3A0x337328def1e2ab26!2sTokyo%2C%20Japan!5e0!3m2!1sen!2sus!4v1641234567890!5m2!1sen!2sus" 
+                                    width="100%" 
+                                    height="300" 
+                                    style="border:0;border-radius:10px;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SIMILAR GYMS SECTION -->
+    <section class="similar-gyms">
+        <div class="container">
+            <h2>Similar Gyms Nearby</h2>
+            <div class="similar-gyms-grid">
+                <div class="gym-card">
+                    <img src="images/3gym.jpg" alt="FITNESS FIT">
+                    <div class="gym-card-content">
+                        <h4>FITNESS FIT</h4>
+                        <div class="gym-card-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <span>4.2</span>
+                        </div>
+                        <p class="gym-card-location">Downtown Tokyo</p>
+                        <div class="gym-card-price">¥7,500/month</div>
+                    </div>
+                </div>
+                
+                <div class="gym-card">
+                    <img src="images/gym4.avif" alt="The Gold Gym">
+                    <div class="gym-card-content">
+                        <h4>The Gold Gym</h4>
+                        <div class="gym-card-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span>4.8</span>
+                        </div>
+                        <p class="gym-card-location">Central Tokyo</p>
+                        <div class="gym-card-price">¥15,000/month</div>
+                    </div>
+                </div>
+                
+                <div class="gym-card">
+                    <img src="images/gym5.jpg" alt="FLOW YOGA">
+                    <div class="gym-card-content">
+                        <h4>FLOW YOGA</h4>
+                        <div class="gym-card-rating">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <span>4.6</span>
+                        </div>
+                        <p class="gym-card-location">Shibuya Tokyo</p>
+                        <div class="gym-card-price">¥9,800/month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <section id="section_4">
+            <p>In case of any concern <a href="#">contact us</a></p>
+            <p>&#169; 2025 www.GymFinder.com. All rights reserved.</p>
+        </section>
+    </footer>
+
+    <script src="gym_detail.js"></script>
+</body>
+</html>

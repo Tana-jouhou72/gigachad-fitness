@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Poster & Video Gallery | GIGACHAD</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../homepage/style.css">
+    <link rel="stylesheet" href="../homepage/gym_style.css">
+    <link rel="stylesheet" href="poster_video_style.css">
+    
+    <!-- Font/Icon Links -->
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <header>
+        <div id="logo">
+            <a href="../homepage/homepage.html">GIGACHAD</a>
+        </div>
+        <ul id="nav_bar">
+            <!-- Updated Navigation Links -->
+            <li><a href="../homepage/homepage.html">Home</a></li>
+            <li><a href="#">Find a Gym</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Memberships</a></li>
+            <li><a href="#">Blog</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
+        </ul> 
+        <div id="search">
+             <!-- Updated Search Bar Placeholder -->
+            <input type="text" id="search_bar" placeholder="Search for gyms, locations, classes...">
+            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+        </div>
+        <div id="right_icon">
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="../login and sign up/login_signup.html" class="dropList">Login</a>
+                  <a href="../login and sign up/login_signup.html" class="dropList">Sign Up</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>Account</span>
+            </div>
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="#" class="dropList" data-tab="video" onclick="switchTab('video'); return false;">Video</a>
+                  <a href="#" class="dropList" data-tab="poster" onclick="switchTab('poster'); return false;">Poster</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>About US</span>
+            </div>
+        </div>
+
+        <!-- TOGGLE MENU (for mobile) -->
+        <div id="toggle">
+            <i class='bx bx-menu dropbtn'></i>
+            <div id="myDropdown" class="dropdown-content">
+                <div class="top">
+                    <a href="../homepage/homepage.html">Home</a>
+                    <a href="#">Find a Gym</a>
+                    <a href="#">Classes</a>
+                    <a href="#">Memberships</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="bottom">
+                    <i class="fa-regular fa-user fa_user" id="profile"></i>
+                    <i class="fa-regular fa-heart fa_wishlist"></i>
+                </div>             
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB NAVIGATION -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="../homepage/homepage.html"><i class="fa-solid fa-house"></i> Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>About Us</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span class="active">Poster & Video Gallery</span>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="gallery-hero">
+        <div class="hero-content">
+            <h1><i class="fa-solid fa-camera"></i> GIGACHAD Gallery</h1>
+            <p>Explore our fitness journey through posters and videos</p>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <!-- GALLERY TABS -->
+            <div class="gallery-tabs">
+                <button class="tab-btn" data-tab="poster" onclick="switchTab('poster')">
+                    <i class="fa-solid fa-image"></i>
+                    Posters
+                </button>
+                <button class="tab-btn" data-tab="video" onclick="switchTab('video')">
+                    <i class="fa-solid fa-video"></i>
+                    Videos
+                </button>
+            </div>
+            
+            <!-- POSTER CONTENT -->
+            <div class="gallery-content" id="poster-content">
+                <div class="content-header">
+                    <h2><i class="fa-solid fa-image"></i> Poster Gallery</h2>
+                    <p>Discover our motivational posters and promotional materials</p>
+                </div>
+                
+                <div class="poster-grid">
+                    <div class="poster-item" onclick="openPosterModal('image/Image.png', 'GIGACHAD Promotional Poster')">
+                        <div class="poster-card">
+                            <img src="image/Image.png" alt="GIGACHAD Poster" loading="lazy">
+                            <div class="poster-overlay">
+                                <div class="poster-info">
+                                    <h3>GIGACHAD Promotional</h3>
+                                    <p>Main promotional poster</p>
+                                    <div class="poster-actions">
+                                        <button class="view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                            View
+                                        </button>
+                                        <button class="download-btn" onclick="downloadPoster('image/Image.png', event)">
+                                            <i class="fa-solid fa-download"></i>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="poster-item" onclick="openPosterModal('image/giga cry.jpg', 'GIGACHAD Motivational Poster')">
+                        <div class="poster-card">
+                            <img src="image/giga cry.jpg" alt="GIGACHAD Motivational" loading="lazy">
+                            <div class="poster-overlay">
+                                <div class="poster-info">
+                                    <h3>Motivational Poster</h3>
+                                    <p>Inspirational fitness poster</p>
+                                    <div class="poster-actions">
+                                        <button class="view-btn">
+                                            <i class="fa-solid fa-eye"></i>
+                                            View
+                                        </button>
+                                        <button class="download-btn" onclick="downloadPoster('image/giga cry.jpg', event)">
+                                            <i class="fa-solid fa-download"></i>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- VIDEO CONTENT -->
+            <div class="gallery-content" id="video-content">
+                <div class="content-header">
+                    <h2><i class="fa-solid fa-video"></i> Video Gallery</h2>
+                    <p>Watch our workout sessions, tutorials, and gym tours</p>
+                </div>
+                
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-card">
+                            <video controls poster="../gym detail/images/2gym.webp" preload="metadata">
+                                <source src="../Common Files/video/bidio.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="video-info">
+                                <h3>GIGACHAD Gym Tour</h3>
+                                <p>Take a virtual tour of our premium facilities and equipment</p>
+                                <div class="video-meta">
+                                    <span><i class="fa-solid fa-clock"></i> 2:30</span>
+                                    <span><i class="fa-solid fa-eye"></i> 1.2K views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sample Additional Videos -->
+                    <div class="video-item sample-video">
+                        <div class="video-card">
+                            <div class="video-placeholder">
+                                <i class="fa-solid fa-play"></i>
+                                <img src="../gym detail/images/personal_training.png" alt="Personal Training" loading="lazy">
+                            </div>
+                            <div class="video-info">
+                                <h3>Personal Training Sessions</h3>
+                                <p>Learn about our one-on-one personal training programs</p>
+                                <div class="video-meta">
+                                    <span><i class="fa-solid fa-clock"></i> 3:45</span>
+                                    <span><i class="fa-solid fa-eye"></i> 856 views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item sample-video">
+                        <div class="video-card">
+                            <div class="video-placeholder">
+                                <i class="fa-solid fa-play"></i>
+                                <img src="../gym detail/images/yoga_studio.webp" alt="Yoga Classes" loading="lazy">
+                            </div>
+                            <div class="video-info">
+                                <h3>Yoga Classes</h3>
+                                <p>Experience our peaceful yoga studio and expert instructors</p>
+                                <div class="video-meta">
+                                    <span><i class="fa-solid fa-clock"></i> 5:20</span>
+                                    <span><i class="fa-solid fa-eye"></i> 2.1K views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item sample-video">
+                        <div class="video-card">
+                            <div class="video-placeholder">
+                                <i class="fa-solid fa-play"></i>
+                                <img src="../gym detail/images/swimmingpool.jpg" alt="Swimming Pool" loading="lazy">
+                            </div>
+                            <div class="video-info">
+                                <h3>Swimming Pool & Aqua Fitness</h3>
+                                <p>Dive into our aquatic fitness programs and swimming facilities</p>
+                                <div class="video-meta">
+                                    <span><i class="fa-solid fa-clock"></i> 4:15</span>
+                                    <span><i class="fa-solid fa-eye"></i> 1.8K views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POSTER MODAL -->
+    <div class="poster-modal" id="poster-modal">
+        <div class="modal-backdrop" onclick="closePosterModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Poster Title</h3>
+                <button class="modal-close" onclick="closePosterModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Poster">
+            </div>
+            <div class="modal-footer">
+                <button class="modal-download-btn" onclick="downloadCurrentPoster()">
+                    <i class="fa-solid fa-download"></i>
+                    Download Poster
+                </button>
+                <button class="modal-share-btn" onclick="sharePoster()">
+                    <i class="fa-solid fa-share"></i>
+                    Share
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <section id="section_4">
+            <p>In case of any concern <a href="#">contact us</a></p>
+            <p>&#169; 2025 www.GymFinder.com. All rights reserved.</p>
+        </section>
+    </footer>
+
+    <script src="poster_video.js"></script>
+</body>
+</html>

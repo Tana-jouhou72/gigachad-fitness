@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Login & Sign Up | GIGACHAD</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../homepage/style.css">
+    <link rel="stylesheet" href="../homepage/gym_style.css">
+    <link rel="stylesheet" href="login_signup_style.css">
+    
+    <!-- Font/Icon Links -->
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <header>
+        <div id="logo">
+            <a href="../homepage/homepage.html">GIGACHAD</a>
+        </div>
+        <ul id="nav_bar">
+            <!-- Updated Navigation Links -->
+            <li><a href="../homepage/homepage.html">Home</a></li>
+            <li><a href="#">Find a Gym</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Memberships</a></li>
+            <li><a href="#">Blog</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
+        </ul> 
+        <div id="search">
+             <!-- Updated Search Bar Placeholder -->
+            <input type="text" id="search_bar" placeholder="Search for gyms, locations, classes...">
+            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+        </div>
+        <div id="right_icon">
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="#" class="dropList active">Login</a>
+                  <a href="#" class="dropList">Sign Up</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>Account</span>
+            </div>
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="#" class="dropList">Video</a>
+                  <a href="#" class="dropList">Poster</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>About US</span>
+            </div>
+        </div>
+
+        <!-- TOGGLE MENU (for mobile) -->
+        <div id="toggle">
+            <i class='bx bx-menu dropbtn'></i>
+            <div id="myDropdown" class="dropdown-content">
+                <div class="top">
+                    <a href="../homepage/homepage.html">Home</a>
+                    <a href="#">Find a Gym</a>
+                    <a href="#">Classes</a>
+                    <a href="#">Memberships</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="bottom">
+                    <i class="fa-regular fa-user fa_user" id="profile"></i>
+                    <i class="fa-regular fa-heart fa_wishlist"></i>
+                </div>             
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB NAVIGATION -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="../homepage/homepage.html"><i class="fa-solid fa-house"></i> Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Account</span>
+        </div>
+    </nav>
+
+    <!-- AUTH SECTION -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <!-- LOGIN/SIGNUP TOGGLE -->
+            <div class="auth-toggle">
+                <button class="toggle-btn active" data-form="login">
+                    <i class="fa-solid fa-sign-in-alt"></i>
+                    Login
+                </button>
+                <button class="toggle-btn" data-form="signup">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Sign Up
+                </button>
+            </div>
+
+            <!-- AUTH FORMS CONTAINER -->
+            <div class="auth-forms">
+                <!-- LOGIN FORM -->
+                <div class="auth-form active" id="login-form">
+                    <div class="form-header">
+                        <h2><i class="fa-solid fa-dumbbell"></i> Welcome Back to GIGACHAD</h2>
+                        <p>Sign in to access your gym membership and continue your fitness journey</p>
+                    </div>
+
+                    <form class="login-form">
+                        <div class="social-login">
+                            <button type="button" class="social-btn google-btn">
+                                <i class="fa-brands fa-google"></i>
+                                Continue with Google
+                            </button>
+                            <button type="button" class="social-btn facebook-btn">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                Continue with Facebook
+                            </button>
+                        </div>
+
+                        <div class="divider">
+                            <span>or sign in with email</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-email">Email Address</label>
+                            <div class="input-group">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="login-email" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <div class="input-group">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="login-password" placeholder="Enter your password">
+                                <button type="button" class="toggle-password" onclick="togglePassword('login-password')">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="submit-btn login-btn">
+                            <i class="fa-solid fa-sign-in-alt"></i>
+                            Sign In
+                        </button>
+
+                        <div class="form-footer">
+                            <p>Don't have an account? <a href="#" onclick="switchToSignup()">Sign up here</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SIGNUP FORM -->
+                <div class="auth-form" id="signup-form">
+                    <div class="form-header">
+                        <h2><i class="fa-solid fa-user-plus"></i> Join GIGACHAD Today</h2>
+                        <p>Create your account and start your fitness transformation</p>
+                    </div>
+
+                    <form class="signup-form">
+                        <div class="social-login">
+                            <button type="button" class="social-btn google-btn">
+                                <i class="fa-brands fa-google"></i>
+                                Sign up with Google
+                            </button>
+                            <button type="button" class="social-btn facebook-btn">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                Sign up with Facebook
+                            </button>
+                        </div>
+
+                        <div class="divider">
+                            <span>or create account with email</span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="signup-firstname">First Name</label>
+                                <div class="input-group">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="signup-firstname" placeholder="First name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-lastname">Last Name</label>
+                                <div class="input-group">
+                                    <i class="fa-solid fa-user"></i>
+                                    <input type="text" id="signup-lastname" placeholder="Last name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-email">Email Address</label>
+                            <div class="input-group">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input type="email" id="signup-email" placeholder="Enter your email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-phone">Phone Number</label>
+                            <div class="input-group">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="tel" id="signup-phone" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <div class="input-group">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="signup-password" placeholder="Create a password">
+                                <button type="button" class="toggle-password" onclick="togglePassword('signup-password')">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Password strength</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <div class="input-group">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="confirm-password" placeholder="Confirm your password">
+                                <button type="button" class="toggle-password" onclick="togglePassword('confirm-password')">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-dob">Date of Birth</label>
+                            <div class="input-group">
+                                <i class="fa-solid fa-calendar"></i>
+                                <input type="date" id="signup-dob">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fitness-goal">Fitness Goal</label>
+                            <div class="input-group">
+                                <i class="fa-solid fa-target"></i>
+                                <select id="fitness-goal">
+                                    <option value="">Select your primary goal</option>
+                                    <option value="weight-loss">Weight Loss</option>
+                                    <option value="muscle-gain">Muscle Gain</option>
+                                    <option value="endurance">Build Endurance</option>
+                                    <option value="strength">Increase Strength</option>
+                                    <option value="general-fitness">General Fitness</option>
+                                    <option value="sports-training">Sports Training</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="checkbox-section">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms-signup">
+                                <label for="terms-signup">
+                                    I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newsletter-signup">
+                                <label for="newsletter-signup">
+                                    Subscribe to our newsletter for fitness tips and exclusive offers
+                                </label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="promotions-signup">
+                                <label for="promotions-signup">
+                                    Receive promotional emails and special deals
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn signup-btn">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Create Account
+                        </button>
+
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="#" onclick="switchToLogin()">Sign in here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- BENEFITS SIDEBAR -->
+            <div class="benefits-sidebar">
+                <div class="benefits-content">
+                    <h3><i class="fa-solid fa-star"></i> Why Join GIGACHAD?</h3>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Premium Equipment</h4>
+                            <p>Access to the latest fitness equipment and technology</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Expert Trainers</h4>
+                            <p>Professional guidance from certified fitness experts</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>24/7 Access</h4>
+                            <p>Train whenever you want with round-the-clock access</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Wellness Programs</h4>
+                            <p>Comprehensive health and wellness support</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-mobile-alt"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h4>Mobile App</h4>
+                            <p>Track progress and book classes on the go</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-section">
+                        <h4>Join Our Community</h4>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">50K+</div>
+                                <div class="stat-label">Members</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100+</div>
+                                <div class="stat-label">Locations</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Classes</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Support</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <section id="section_4">
+            <p>In case of any concern <a href="#">contact us</a></p>
+            <p>&#169; 2025 www.GymFinder.com. All rights reserved.</p>
+        </section>
+    </footer>
+
+    <script src="login_signup.js"></script>
+</body>
+</html>

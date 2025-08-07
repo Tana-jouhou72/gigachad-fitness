@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Payment - Secure Checkout | GIGACHAD</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../homepage/style.css">
+    <link rel="stylesheet" href="../homepage/gym_style.css">
+    <link rel="stylesheet" href="payment_style.css">
+    
+    <!-- Font/Icon Links -->
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- MENU BAR -->
+    <header>
+        <div id="logo">
+            <a href="../homepage/homepage.html">GIGACHAD</a>
+        </div>
+        <ul id="nav_bar">
+            <!-- Updated Navigation Links -->
+            <li><a href="../homepage/homepage.html">Home</a></li>
+            <li><a href="#">Find a Gym</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Memberships</a></li>
+            <li><a href="#">Blog</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
+        </ul> 
+        <div id="search">
+             <!-- Updated Search Bar Placeholder -->
+            <input type="text" id="search_bar" placeholder="Search for gyms, locations, classes...">
+            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+        </div>
+        <div id="right_icon">
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="../login and sign up/login_signup.html" class="dropList">Login</a>
+                  <a href="../login and sign up/login_signup.html" class="dropList">Sign Up</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>Account</span>
+            </div>
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="#" class="dropList">Video</a>
+                  <a href="#" class="dropList">Poster</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>About US</span>
+            </div>
+        </div>
+
+        <!-- TOGGLE MENU (for mobile) -->
+        <div id="toggle">
+            <i class='bx bx-menu dropbtn'></i>
+            <div id="myDropdown" class="dropdown-content">
+                <div class="top">
+                    <a href="../homepage/homepage.html">Home</a>
+                    <a href="#">Find a Gym</a>
+                    <a href="#">Classes</a>
+                    <a href="#">Memberships</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="bottom">
+                    <i class="fa-regular fa-user fa_user" id="profile"></i>
+                    <i class="fa-regular fa-heart fa_wishlist"></i>
+                </div>             
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB NAVIGATION -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-container">
+            <a href="../homepage/homepage.html"><i class="fa-solid fa-house"></i> Home</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <a href="../gym detail/gym_detail.html">Gym Details</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Payment</span>
+        </div>
+    </nav>
+
+    <!-- PAYMENT SECTION -->
+    <section class="payment-section">
+        <div class="payment-container">
+            <!-- ORDER SUMMARY -->
+            <div class="order-summary">
+                <h2><i class="fa-solid fa-receipt"></i> Order Summary</h2>
+                <div class="order-item">
+                    <div class="item-image">
+                        <img src="../gym detail/images_gym/1.webp" alt="SPORT GYM">
+                    </div>
+                    <div class="item-details">
+                        <h3>SPORT GYM - Premium Membership</h3>
+                        <p class="item-location"><i class="fa-solid fa-location-dot"></i> Downtown, Tokyo, Japan</p>
+                        <div class="item-features">
+                            <span class="feature-tag">24/7 Access</span>
+                            <span class="feature-tag">All Equipment</span>
+                            <span class="feature-tag">Group Classes</span>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        <span class="price">¥12,900</span>
+                        <span class="period">/month</span>
+                    </div>
+                </div>
+                
+                <div class="order-breakdown">
+                    <div class="breakdown-line">
+                        <span>Membership Fee</span>
+                        <span>¥12,900</span>
+                    </div>
+                    <div class="breakdown-line">
+                        <span>Registration Fee</span>
+                        <span>¥3,000</span>
+                    </div>
+                    <div class="breakdown-line">
+                        <span>Tax (10%)</span>
+                        <span>¥1,590</span>
+                    </div>
+                    <div class="breakdown-line total">
+                        <span>Total</span>
+                        <span>¥17,490</span>
+                    </div>
+                </div>
+                
+                <div class="promo-code">
+                    <input type="text" placeholder="Enter promo code" id="promo-input">
+                    <button id="apply-promo">Apply</button>
+                </div>
+            </div>
+            
+            <!-- PAYMENT FORM -->
+            <div class="payment-form">
+                <h2><i class="fa-solid fa-credit-card"></i> Payment Information</h2>
+                
+                <div class="payment-methods">
+                    <div class="method-option active" data-method="card">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>Credit/Debit Card</span>
+                    </div>
+                    <div class="method-option" data-method="paypal">
+                        <i class="fa-brands fa-paypal"></i>
+                        <span>PayPal</span>
+                    </div>
+                    <div class="method-option" data-method="bank">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Bank Transfer</span>
+                    </div>
+                </div>
+                
+                <form id="payment-form" class="checkout-form">
+                    <!-- CARD PAYMENT FORM -->
+                    <div class="payment-content active" id="card-payment">
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="card-number">Card Number</label>
+                                <div class="card-input">
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19">
+                                    <div class="card-icons">
+                                        <i class="fa-brands fa-cc-visa"></i>
+                                        <i class="fa-brands fa-cc-mastercard"></i>
+                                        <i class="fa-brands fa-cc-amex"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cardholder-name">Cardholder Name</label>
+                                <input type="text" id="cardholder-name" placeholder="John Smith">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry-date">Expiry Date</label>
+                                <input type="text" id="expiry-date" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PAYPAL PAYMENT -->
+                    <div class="payment-content" id="paypal-payment">
+                        <div class="paypal-info">
+                            <i class="fa-brands fa-paypal paypal-icon"></i>
+                            <p>You will be redirected to PayPal to complete your payment securely.</p>
+                            <button type="button" class="paypal-btn">
+                                <i class="fa-brands fa-paypal"></i>
+                                Continue with PayPal
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- BANK TRANSFER -->
+                    <div class="payment-content" id="bank-payment">
+                        <div class="bank-info">
+                            <i class="fa-solid fa-building-columns bank-icon"></i>
+                            <p>Bank transfer details will be provided after order confirmation.</p>
+                            <div class="bank-notice">
+                                <i class="fa-solid fa-info-circle"></i>
+                                <span>Processing time: 1-3 business days</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- BILLING ADDRESS -->
+                    <div class="billing-section">
+                        <h3><i class="fa-solid fa-map-location-dot"></i> Billing Address</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <input type="text" id="first-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" id="last-name">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="address">Address</label>
+                                <input type="text" id="address">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city">
+                            </div>
+                            <div class="form-group">
+                                <label for="postal-code">Postal Code</label>
+                                <input type="text" id="postal-code">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="country">Country</label>
+                                <select id="country">
+                                    <option value="">Select Country</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="US">United States</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="CA">Canada</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- AGREEMENT -->
+                    <div class="agreement-section">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terms-agreement">
+                            <label for="terms-agreement">
+                                I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter">
+                                Subscribe to our newsletter for exclusive offers and updates
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- SUBMIT BUTTON -->
+                    <button type="submit" class="submit-payment">
+                        <i class="fa-solid fa-lock"></i>
+                        Complete Secure Payment - ¥17,490
+                    </button>
+                </form>
+                
+                <!-- SECURITY BADGES -->
+                <div class="security-badges">
+                    <div class="security-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>SSL Encrypted</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Secure Payment</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <span>Privacy Protected</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <section id="section_4">
+            <p>In case of any concern <a href="#">contact us</a></p>
+            <p>&#169; 2025 www.GymFinder.com. All rights reserved.</p>
+        </section>
+    </footer>
+
+    <script src="payment.js"></script>
+</body>
+</html>

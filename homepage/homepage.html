@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- THIS IS THE CRITICAL LINE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>GIGACHAD - Find Your Perfect Gym & Fitness Center</title>
+    <!-- Your CSS links -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gym_style.css">
+    <!-- Your Font/Icon links -->
+    <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+     <!-- MENU BAR -->
+     <header>
+        <div id="logo">
+            GIGACHAD
+        </div>
+        <ul id="nav_bar">
+            <!-- Updated Navigation Links -->
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Find a Gym</a></li>
+            <li><a href="#">Classes</a></li>
+            <li><a href="#">Memberships</a></li>
+            <li><a href="#">Blog</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
+        </ul> 
+        <div id="search">
+             <!-- Updated Search Bar Placeholder -->
+            <input type="text" id="search_bar" placeholder="Search for gyms, locations, classes...">
+            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+        </div>
+        <div id="right_icon">
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="../login and sign up/login_signup.html" class="dropList">Login</a>
+                  <a href="../login and sign up/login_signup.html" class="dropList">Sign Up</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>Account</span>
+            </div>
+            <div id="reggDropdown">
+              <div id="drop">
+                  <a href="../poster and video/poster_video.html?tab=video" class="dropList">Video</a>
+                  <a href="../poster and video/poster_video.html?tab=poster" class="dropList">Poster</a>
+              </div>
+              <i class="fa-regular fa-user"></i>
+              <span>About US</span>
+            </div>
+        </div>
+
+        <!-- TOGGLE MENU (for mobile) -->
+        <div id="toggle">
+            <i class='bx bx-menu dropbtn'></i>
+            <div id="myDropdown" class="dropdown-content">
+                <div class="top">
+                    <a href="#">Home</a>
+                    <a href="#">Find a Gym</a>
+                    <a href="#">Classes</a>
+                    <a href="#">Memberships</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="bottom">
+                    <i class="fa-regular fa-user fa_user" id="profile"></i>
+                    <i class="fa-regular fa-heart fa_wishlist"></i>
+                </div>             
+            </div>
+        </div>
+    </header>
+
+   <section id="banner">
+       <div>
+           <!-- New Banner Images for Fitness Theme -->
+           <img src="images/banner" alt="Modern gym interior" class="forWeb forDesk">
+       </div>
+   </section>
+   
+   <!-- MAIN CONTAINER -->
+   <main>
+       <div id="content">
+           <h1 class="brand_heading" id="content_head">Find Your Strength, Near You</h1>
+           <div id="category">
+            <!-- Updated Categories for Gym Types -->
+            <div>
+                <a href="#">
+                    <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?q=80&w=2940&auto=format&fit=crop" alt="24/7 Gyms">
+                    <p class="category-title">24/7 Access</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/swimmingpool.jpg" alt="Gyms with Pools">
+                     <p class="category-title">With Swimming Pool</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2940&auto=format&fit=crop" alt="CrossFit Gyms">
+                     <p class="category-title">CrossFit & HIIT</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/yoga_studio.webp" alt="Yoga Studios">
+                     <p class="category-title">Yoga Studios</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/personal_training.png" alt="Personal Training">
+                     <p class="category-title">Personal Training</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2940&auto=format&fit=crop" alt="Group Classes">
+                     <p class="category-title">Group Classes</p>
+                </a>
+            </div>
+        </div>
+       </div>
+       <aside>
+           <!-- This section can be used for filters on a search results page -->
+       </aside>
+   </main>
+
+   <!-- LOCATION SEARCH SECTION -->
+   <section id="location-search">
+       <div class="location-container">
+           <h2>Find Gyms Near You</h2>
+           <p>Enter your location to discover the best gyms and fitness centers in your area</p>
+           
+           <div class="search-wrapper">
+               <div class="location-input-group">
+                   <i class="fa-solid fa-location-dot location-icon"></i>
+                   <input type="text" id="location-input" placeholder="Enter your city, zip code, or address...">
+                   <button id="search-location-btn" class="search-btn">
+                       <i class="fa-solid fa-magnifying-glass"></i>
+                       Search
+                   </button>
+               </div>
+               
+               <div class="map-button-wrapper">
+                   <button id="open-map-btn" class="map-btn">
+                       <i class="fa-solid fa-map-location-dot"></i>
+                       Select on Map
+                   </button>
+               </div>
+           </div>
+           
+           <div class="quick-locations">
+               <span>Popular locations:</span>
+               <a href="#" class="location-tag">Tokyo</a>
+               <a href="#" class="location-tag">Osaka</a>
+               <a href="#" class="location-tag">Tsuyama</a>
+               <a href="#" class="location-tag">Okayama</a>
+               <a href="#" class="location-tag">New York</a>
+           </div>
+       </div>     
+   </section>
+
+   <section id="shopping-section">
+    <div id="shopping">
+           <h1 class="brand_heading">Shop gym equipments, supplements and more</h1>
+           <div id="category">
+            <!-- Updated Categories for Gym Types -->
+            <div>
+                <a href="#">
+                    <img src="images/protein-powder.jpg" alt="24/7 Gyms">
+                    <p class="category-title">Protein Shake</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/Gym-Equipment-Names.jpg" alt="Gyms with Pools">
+                     <p class="category-title">Gym Equipments</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/SupplementMain.jpg" alt="CrossFit Gyms">
+                     <p class="category-title">Supplements</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/massage.webp" alt="Yoga Studios">
+                     <p class="category-title">Massage</p>
+                </a>
+            </div>
+        </div>
+       </div>
+
+   </section>
+
+   <section id="Gyms features">
+    <div id="content">
+           <h1 class="brand_heading" id="content_head">Popular LOCATIONS</h1>
+           <div id="category">
+            <!-- Updated Categories for Gym Types -->
+            <div>
+                <a href="../gym detail/gym_detail.html">
+                    <img src="images/2gym.webp" alt="24/7 Gyms">
+                    <p class="category-title">SPORT GYM</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/3gym.jpg" alt="Gyms with Pools">
+                     <p class="category-title">FITNESS FIT</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/gym4.avif" alt="CrossFit Gyms">
+                     <p class="category-title">The Gold Gym</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/gym5.jpg" alt="Yoga Studios">
+                     <p class="category-title">FLOW YOGA</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="images/gym6.png" alt="Personal Training">
+                     <p class="category-title">Women Gym</p>
+                </a>
+            </div>
+            <div>
+                <a href="#">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2940&auto=format&fit=crop" alt="Group Classes">
+                     <p class="category-title">Group Classes</p>
+                </a>
+            </div>
+        </div>
+       </div>
+
+   </section>
+
+   <!-- MAP MODAL OVERLAY -->
+   <div id="map-modal" class="map-modal">
+       <div class="map-modal-content">
+           <div class="map-header">
+               <h3>Select Your Location</h3>
+               <button id="close-map-modal" class="close-btn">
+                   <i class="fa-solid fa-xmark"></i>
+               </button>
+           </div>
+           <div class="map-container">
+               <iframe id="google-map-iframe" 
+                       src="" 
+                       width="100%" 
+                       height="400" 
+                       style="border:0;" 
+                       allowfullscreen="" 
+                       loading="lazy" 
+                       referrerpolicy="no-referrer-when-downgrade">
+               </iframe>
+           </div>
+           <div class="map-footer">
+               <button id="use-selected-location" class="use-location-btn">
+                   <i class="fa-solid fa-check"></i>
+                   Use This Location
+               </button>
+               <button id="detect-my-location" class="detect-location-btn">
+                   <i class="fa-solid fa-location-crosshairs"></i>
+                   Use My Current Location
+               </button>
+           </div>
+       </div>
+   </div>
+       
+       <!-- FOOTER SECTION -->
+       <footer>
+            <section id="section_1">
+                <div id="left">
+                    <div>
+                        <h4>Navigation</h4>
+                        <p>Home</p>
+                        <p>Find a Gym</p>
+                        <p>Classes</p>
+                        <p>Memberships</p>
+                        <p>Blog</p>
+                    </div>
+                    <div>
+                    <h4>Useful Links</h4>
+                    <p>About Us</p>
+                    <p>FAQ</p>
+                    <p>Terms of Service</p>
+                    <p>Privacy Policy</p>
+                    <p>Contact Us</p>
+                    <p>List Your Gym</p>
+                    </div>
+                    <div>
+                        <h4>Experience GymFinder App on Mobile</h4>
+                        <img src="https://bit.ly/3LluZ4L" alt="Get on Google Play">
+                        <img src="https://bit.ly/3DmWQys" alt="Download on the App Store">
+                        <h4 id="social_connect">Keep in Touch</h4>
+                        <div>
+                            <i class="fa-brands fa-facebook-square"></i>
+                            <i class="fa-brands fa-twitter-square"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="right">
+                    <!-- Updated site guarantees -->
+                    <div>
+                        <img src="https://bit.ly/3JPiL47" alt="Verified">
+                        <p> <span>VERIFIED LISTINGS</span> guarantee for all gyms on GymFinder.com</p>
+                    </div>
+                    <div>
+                        <img src="https://bit.ly/3uBalH4" alt="Return Policy">
+                        <p><span>BEST RATE GUARANTEE</span> Find the best membership prices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section_2">
+                <h4>Popular Searches</h4>
+                <div></div> 
+            </section>
+
+            <section id="section_3">
+                <!-- Updated popular searches -->
+                <a href="">Gyms near me</a><a href="">24-hour gyms</a><a href="">Yoga classes</a><a href="">CrossFit boxes</a><a href="">Gyms with pools</a><a href="">Personal trainers</a><a href="">Zumba classes</a><a href="">Powerlifting gyms</a><a href="">Boxing gyms</a><a href="">Pilates studios</a>
+            </section>
+
+            <section id="section_4">
+                <p>In case of any concern <a href="#"> contact us</a></p>
+                <p>&#169; 2025 www.gigachadgym.com. All rights reserved.</p>
+            </section>
+       </footer>
+
+<script>
+// Location Search Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const locationInput = document.getElementById('location-input');
+    const searchBtn = document.getElementById('search-location-btn');
+    const mapBtn = document.getElementById('open-map-btn');
+    const locationTags = document.querySelectorAll('.location-tag');
+    
+    // Map modal elements
+    const mapModal = document.getElementById('map-modal');
+    const closeMapBtn = document.getElementById('close-map-modal');
+    const useLocationBtn = document.getElementById('use-selected-location');
+    const detectLocationBtn = document.getElementById('detect-my-location');
+    const mapIframe = document.getElementById('google-map-iframe');
+    
+    let currentMapLocation = '';
+
+    // Search button functionality
+    searchBtn.addEventListener('click', function() {
+        const location = locationInput.value.trim();
+        if (location) {
+            // Here you would typically send the location to your backend or API
+            alert(`Searching for gyms near: ${location}`);
+            // You can replace this with actual search functionality
+        } else {
+            alert('Please enter a location to search');
+        }
+    });
+
+    // Enter key support for search
+    locationInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            searchBtn.click();
+        }
+    });
+
+    // Google Maps modal functionality
+    mapBtn.addEventListener('click', function() {
+        openMapModal();
+    });
+
+    // Close map modal
+    closeMapBtn.addEventListener('click', function() {
+        closeMapModal();
+    });
+
+    // Close modal when clicking outside
+    mapModal.addEventListener('click', function(e) {
+        if (e.target === mapModal) {
+            closeMapModal();
+        }
+    });
+
+    // ESC key to close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mapModal.classList.contains('show')) {
+            closeMapModal();
+        }
+    });
+
+    // Use selected location button
+    useLocationBtn.addEventListener('click', function() {
+        if (currentMapLocation) {
+            locationInput.value = currentMapLocation;
+            closeMapModal();
+            // Optionally trigger search automatically
+            searchBtn.click();
+        } else {
+            alert('Please select a location on the map first');
+        }
+    });
+
+    // Detect my location button
+    detectLocationBtn.addEventListener('click', function() {
+        if (navigator.geolocation) {
+            detectLocationBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Detecting...';
+            detectLocationBtn.disabled = true;
+            
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    
+                    // Update map to show current location
+                    const mapSrc = `https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=${lat},${lng}&zoom=15`;
+                    mapIframe.src = mapSrc;
+                    
+                    // For demo purposes, we'll use coordinates as location
+                    currentMapLocation = `${lat.toFixed(4)}, ${lng.toFixed(4)}`;
+                    
+                    // Reset button
+                    detectLocationBtn.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> Use My Current Location';
+                    detectLocationBtn.disabled = false;
+                    
+                    alert('Current location detected! Click "Use This Location" to confirm.');
+                },
+                function(error) {
+                    // Reset button
+                    detectLocationBtn.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> Use My Current Location';
+                    detectLocationBtn.disabled = false;
+                    
+                    alert('Unable to detect your location. Please ensure location access is enabled.');
+                }
+            );
+        } else {
+            alert('Geolocation is not supported by this browser.');
+        }
+    });
+
+    // Quick location tags functionality
+    locationTags.forEach(tag => {
+        tag.addEventListener('click', function(e) {
+            e.preventDefault();
+            const location = this.textContent;
+            locationInput.value = location;
+            // Automatically trigger search
+            searchBtn.click();
+        });
+    });
+
+    // Add some visual feedback for input focus
+    locationInput.addEventListener('focus', function() {
+        this.parentElement.style.transform = 'scale(1.02)';
+    });
+
+    locationInput.addEventListener('blur', function() {
+        this.parentElement.style.transform = 'scale(1)';
+    });
+
+    // Map Modal Functions
+    function openMapModal() {
+        const defaultMapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2518995763823!2d-74.00369368459418!3d40.74881797932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1641234567890!5m2!1sen!2sus';
+        mapIframe.src = defaultMapSrc;
+        
+        mapModal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        
+        const currentLocation = locationInput.value.trim();
+        if (currentLocation) {
+            updateMapLocation(currentLocation);
+        }
+    }
+
+    function closeMapModal() {
+        mapModal.classList.remove('show');
+        document.body.style.overflow = 'auto'; 
+    }
+
+    function updateMapLocation(location) {
+        currentMapLocation = location;
+    }
+});
+</script>
+
+</body>
+</html>

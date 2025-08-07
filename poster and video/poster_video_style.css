@@ -1,0 +1,608 @@
+/* Poster & Video Gallery Styles */
+
+:root {
+    --primary-color: #f2c210;
+    --secondary-color: #1a2e40;
+    --text-color: #333;
+    --border-color: #e9ecef;
+    --background-light: #f8f9fa;
+    --success-color: #28a745;
+    --gradient-bg: linear-gradient(135deg, #1a2e40 0%, #2c4a5e 100%);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background: var(--background-light);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumb-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+}
+
+.breadcrumb a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumb span {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.breadcrumb i {
+    color: #6c757d;
+    font-size: 1.2rem;
+}
+
+/* Hero Section */
+.gallery-hero {
+    background: var(--gradient-bg);
+    padding: 6rem 0 4rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../gym detail/images/2gym.webp') center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Gallery Tabs */
+.gallery-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+    background: var(--background-light);
+    border-radius: 15px;
+    padding: 1rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tab-btn:hover {
+    color: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.tab-btn.active {
+    background: var(--secondary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(26, 46, 64, 0.2);
+}
+
+/* Gallery Content */
+.gallery-content {
+    display: none;
+    animation: fadeInUp 0.5s ease;
+}
+
+.gallery-content.active {
+    display: block;
+}
+
+.content-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.content-header h2 {
+    color: var(--secondary-color);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.content-header p {
+    font-size: 1.6rem;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+/* Poster Grid */
+.poster-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.poster-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.poster-item:hover {
+    transform: translateY(-10px);
+}
+
+.poster-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.poster-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.poster-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.poster-card:hover img {
+    transform: scale(1.05);
+}
+
+.poster-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 3rem 2rem 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.poster-card:hover .poster-overlay {
+    transform: translateY(0);
+}
+
+.poster-info h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.poster-info p {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.poster-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.view-btn,
+.download-btn {
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-btn {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.download-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.view-btn:hover,
+.download-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.video-item {
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+}
+
+.video-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.video-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.video-card video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.video-placeholder {
+    position: relative;
+    height: 250px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.video-placeholder i {
+    position: absolute;
+    font-size: 4rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.video-placeholder:hover i {
+    transform: scale(1.1);
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.video-info {
+    padding: 2rem;
+}
+
+.video-info h3 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.video-info p {
+    color: #6c757d;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.video-meta {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
+    color: #999;
+}
+
+.video-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Poster Modal */
+.poster-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.poster-modal.active {
+    display: flex;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    animation: modalSlideIn 0.3s ease;
+}
+
+.modal-header {
+    padding: 2rem;
+    background: var(--secondary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 0;
+    text-align: center;
+    background: #000;
+}
+
+.modal-body img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.modal-footer {
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    background: var(--background-light);
+}
+
+.modal-download-btn,
+.modal-share-btn {
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-download-btn {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.modal-share-btn {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.modal-download-btn:hover,
+.modal-share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .poster-grid {
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+    
+    .poster-card img {
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.6rem;
+    }
+    
+    .poster-grid,
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .gallery-tabs {
+        max-width: 100%;
+        margin-bottom: 3rem;
+    }
+    
+    .tab-btn {
+        font-size: 1.4rem;
+        padding: 1.2rem 1.5rem;
+    }
+    
+    .content-header h2 {
+        font-size: 2.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .poster-actions {
+        flex-direction: column;
+    }
+    
+    .modal-content {
+        max-width: 95vw;
+        max-height: 95vh;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-section {
+        padding: 2rem 0;
+    }
+    
+    .gallery-container {
+        padding: 0 1rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .breadcrumb-container {
+        padding: 0 1rem;
+        font-size: 1.2rem;
+    }
+}
