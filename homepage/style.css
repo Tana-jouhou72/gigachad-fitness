@@ -926,3 +926,99 @@ footer section, footer hr{
     }
 }
 
+/* Additional Mobile Improvements */
+@media (max-width: 768px) {
+    /* Header improvements for mobile */
+    header {
+        height: 70px;
+        padding: 0 15px;
+        flex-wrap: wrap;
+    }
+    
+    #logo {
+        width: 25%;
+        font-size: 2rem;
+    }
+    
+    #nav_bar {
+        width: 50%;
+        font-size: 13px;
+        gap: 10px;
+    }
+    
+    #nav_bar a {
+        padding-top: 2.5rem;
+    }
+    
+    #search {
+        width: 100%;
+        order: 3;
+        margin-top: 10px;
+    }
+    
+    #search_bar {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    
+    #right_icon {
+        width: 25%;
+        font-size: 12px;
+    }
+    
+    /* Main content adjustments */
+    .main_container {
+        margin-top: 80px;
+        padding: 0 10px;
+    }
+    
+    /* Responsive text sizing */
+    h1, h2, h3 {
+        font-size: clamp(1.5rem, 4vw, 3rem);
+    }
+    
+    p {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 60px;
+        padding: 0 10px;
+    }
+    
+    #logo {
+        font-size: 1.5rem;
+    }
+    
+    #nav_bar {
+        font-size: 11px;
+        gap: 5px;
+    }
+    
+    #nav_bar a {
+        padding-top: 2rem;
+    }
+    
+    #search_bar {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    
+    #right_icon {
+        font-size: 10px;
+    }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) {
+    #nav_bar li:hover a {
+        border-bottom: none;
+    }
+    
+    #nav_bar li:active a {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+

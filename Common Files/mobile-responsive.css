@@ -1,0 +1,242 @@
+/* Mobile Responsive CSS for GIGACHAD Fitness */
+/* Include this file in all HTML pages for consistent mobile experience */
+
+/* Base Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Universal mobile fixes */
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+        overflow-x: hidden;
+    }
+    
+    /* Headers and navigation */
+    header {
+        height: auto !important;
+        min-height: 60px;
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Logo adjustments */
+    #logo, .logo {
+        font-size: 1.8rem !important;
+        width: auto !important;
+        margin-bottom: 5px;
+    }
+    
+    /* Navigation menu */
+    #nav_bar, .nav-bar, nav ul {
+        flex-direction: column;
+        width: 100% !important;
+        gap: 5px;
+        padding: 10px 0;
+    }
+    
+    #nav_bar li, .nav-bar li, nav li {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+    }
+    
+    #nav_bar a, .nav-bar a, nav a {
+        padding: 10px !important;
+        display: block;
+        border-radius: 5px;
+    }
+    
+    /* Search bar */
+    #search, .search {
+        width: 100% !important;
+        margin: 10px 0;
+    }
+    
+    #search_bar, .search-bar, input[type="search"] {
+        width: 100% !important;
+        padding: 12px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    /* Right icons/account section */
+    #right_icon, .right-icon {
+        width: 100% !important;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    /* Main content containers */
+    .container, .main_container, main {
+        width: 100% !important;
+        padding: 15px !important;
+        margin: 0 !important;
+        margin-top: 80px !important; /* Account for fixed header */
+    }
+    
+    /* Grid and flex layouts */
+    .grid, [class*="grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    .flex, [class*="flex"] {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    /* Cards and boxes */
+    .card, .box, [class*="card"], [class*="box"] {
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 15px !important;
+    }
+    
+    /* Images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    h2 {
+        font-size: clamp(1.5rem, 4vw, 2rem) !important;
+        line-height: 1.3;
+        margin-bottom: 12px;
+    }
+    
+    h3 {
+        font-size: clamp(1.3rem, 3vw, 1.7rem) !important;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+    
+    p {
+        font-size: clamp(1rem, 2.5vw, 1.1rem) !important;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    /* Buttons */
+    button, .btn, [class*="btn"], input[type="submit"], input[type="button"] {
+        width: 100% !important;
+        padding: 15px !important;
+        font-size: 16px !important;
+        margin: 10px 0 !important;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    
+    /* Forms */
+    form {
+        width: 100% !important;
+        padding: 15px !important;
+    }
+    
+    input, textarea, select {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        margin: 5px 0 15px 0 !important;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+    
+    /* Dropdowns */
+    .dropdown, [class*="dropdown"] {
+        position: static !important;
+        width: 100% !important;
+    }
+    
+    .dropdown-content, [class*="dropdown"] [class*="drop"] {
+        position: static !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+}
+
+/* Small Mobile Devices (iPhone SE, etc.) */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    
+    header {
+        min-height: 50px;
+        padding: 8px 10px;
+    }
+    
+    #logo, .logo {
+        font-size: 1.5rem !important;
+    }
+    
+    .container, .main_container, main {
+        padding: 10px !important;
+        margin-top: 60px !important;
+    }
+    
+    button, .btn, [class*="btn"] {
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+    
+    input, textarea, select {
+        padding: 10px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) {
+    /* Remove hover effects on touch devices */
+    *:hover {
+        background-color: inherit !important;
+        color: inherit !important;
+        transform: none !important;
+    }
+    
+    /* Add touch-friendly active states */
+    button:active, .btn:active, a:active {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+        transform: scale(0.98);
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    header {
+        min-height: 50px;
+    }
+    
+    .container, .main_container, main {
+        margin-top: 60px !important;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
